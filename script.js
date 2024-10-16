@@ -29,8 +29,14 @@ export function aufgabe01(args) {
     // damit wir nicht so viele Klammern schreiben müssen.
     const currentElement = input[i]
 
-    // Hier wird das aktuelle Zeichen ans Ende der Resultat-Liste angehängt.
-    result.push(currentElement)
+    if (currentElement === "a") {
+      // do nothing
+    } else if (currentElement === "i") {
+      // auch i ignorieren
+    } else {
+      // Hier wird das aktuelle Zeichen ans Ende der Resultat-Liste angehängt.
+      result.push(currentElement)
+    }
   }
 
   // Hier geben wir das Resultat zurück, und machen einen Text daraus.
