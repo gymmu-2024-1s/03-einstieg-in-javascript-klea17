@@ -57,3 +57,23 @@ export function aufgabe02(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe02]", aufgabe02)
+
+ec
+
+export function aufgabe05(args) {
+  const input = args
+  let hasUpperCaseLetter = false
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const UpperCaseVersion = currentElement.toUpperCase()
+
+    if (currentElement === ".") {
+      //ignorieren  "ignorieren": Unknown word
+    } else if (currentElement === UpperCaseVersion) {
+      hasUpperCaseLetter = true
+    }
+  }
+  return hasUpperCaseLetter
+}
+linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
