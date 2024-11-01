@@ -58,8 +58,6 @@ export function aufgabe02(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe02]", aufgabe02)
 
-ec
-
 export function aufgabe05(args) {
   const input = args
   let hasUpperCaseLetter = false
