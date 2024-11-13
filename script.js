@@ -111,3 +111,4 @@ export function aufgabe08(args) {
 
   return result.join("")
 }
+linksupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
