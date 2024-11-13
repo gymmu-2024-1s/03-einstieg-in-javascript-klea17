@@ -94,3 +94,20 @@ export function aufgabe03(args) {
   return count
 }
 linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
+
+export function aufgabe08(args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    //wenn das aktuelle Zeichen ein e ist
+    if (currentElement === "e") {
+      // hànge jetzt eine 3 an
+      result.push("3")
+    } else {
+      result.push(currentElement)
+    }
+  }
+
+  return result.join("")
+}
