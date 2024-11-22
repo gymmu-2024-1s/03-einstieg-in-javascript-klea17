@@ -112,3 +112,46 @@ export function aufgabe08(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
+
+export function aufgabe12(args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "e") {
+      result.push(i)
+    } else if (currentElement === "E") {
+      result.push(i)
+    } else {
+      result.push(-1)
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
+
+export function aufgabe22(args) {
+  const input = args
+  const result = []
+
+  let foundK = false
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    // Wenn das K noch nicht gefunden wurde, hànge unterstriche an result an
+    if (foundK === false) {
+      result.push("_")
+    } else {
+      result.push(currentElement)
+    }
+
+    // Wenn das aktuelle Zeichen ein K ist, setze foundK auf true
+    if (currentElement === "k") {
+      foundK = true
+    }
+  }
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
