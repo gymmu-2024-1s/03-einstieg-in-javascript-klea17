@@ -125,6 +125,7 @@ export function aufgabe12(args) {
     } else if (currentElement === "E") {
       position = i
       break
+      //mit break habe ich die Schleife gebrochen, damit man nicht weiter sucht//
     }
   }
 
@@ -157,3 +158,20 @@ export function aufgabe22(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
+
+export function aufgabe13(args) {
+  const input = args
+  const result = []
+  let position = -1
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "e") {
+      position = i
+    } else if (currentElement === "E") {
+      position = i
+    }
+  }
+
+  return position
+}
+linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
