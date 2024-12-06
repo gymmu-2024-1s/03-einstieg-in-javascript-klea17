@@ -59,20 +59,7 @@ export function aufgabe02(args) {
 linkupExerciseHandler("[data-click=aufgabe02]", aufgabe02)
 
 export function aufgabe05(args) {
-  const input = args
-  let hasUpperCaseLetter = false
-
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    const UpperCaseVersion = currentElement.toUpperCase()
-
-    if (currentElement === ".") {
-      //ignorieren  "ignorieren": Unknown word
-    } else if (currentElement === UpperCaseVersion) {
-      hasUpperCaseLetter = true
-    }
-  }
-  return hasUpperCaseLetter
+  return /[A-Z]/.test(args) //üperfrüfe ob mindestens ein Großbuchstabe vorhanden ist.
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
