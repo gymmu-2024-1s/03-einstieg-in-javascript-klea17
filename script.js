@@ -213,3 +213,20 @@ export function aufgabe21(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
+
+export function aufgabe06(args) {
+  const input = args
+  const result = []
+  let hasSonderzeichen = false
+  // Schreibe eine Funktion, die testet ob ein Sonderzeichen vorkommt
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
+    if (ascii >= 33 && ascii <= 47) {
+      hasSonderzeichen = true
+    }
+  }
+  return hasSonderzeichen
+}
+linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
