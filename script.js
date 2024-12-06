@@ -175,3 +175,39 @@ export function aufgabe13(args) {
   return position
 }
 linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
+
+export function aufgabe16(args) {
+  const text = args
+  let switchFirst = true
+  const listFirst = []
+  const listSecond = []
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] === "$") {
+      switchFirst = false
+    } else {
+      if (switchFirst === true) {
+        listFirst.push(text[i])
+      } else {
+        listSecond.push(text[i])
+      }
+    }
+  }
+  return [listFirst.join(""), listSecond.join("")]
+}
+linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
+
+export function aufgabe20(args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    // Prüfen Sie ob nach jedem `.` ein Leerschlag kommt.
+    if (currentElement === ".") {
+      if (input[i + 1] === " ") {
+        return true
+      }
+      return false
+    }
+  }
+}
+linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
