@@ -253,35 +253,32 @@ export function aufgabe04(args) {
   const input = args
   const result = []
 
-  //hier filter ich die Eingaben so, dass nur Leerzeichen und Buchstaben übrig sind//
-
+  // Wir filtern die Eingabe so, dass nur noch Buchstaben und Leerzeichen übrig bleiben
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     const ascii = currentElement.charCodeAt(0)
     if (ascii >= 65 && ascii <= 90) {
-      //Grossbuchstabe //
       result.push(currentElement)
     } else if (ascii >= 97 && ascii <= 122) {
-      //Kleinbuchstabe //
       result.push(currentElement)
     } else if (ascii === 32) {
-      //Leerzeichen //
       result.push(currentElement)
     }
   }
+  // Jetzt könnten wir noch mehrere Leerzeichen am Stück haben, die müssen wir noch filtern
+
   const result2 = []
   for (let i = 0; i < result.length; i++) {
     const currentElement = result[i]
     const nextElement = result[i + 1]
-    if (currentElement === " " && nextElement !== " ") {
-      //Hier sind 2 Leerzeichen hintereinander, das erste wird ignoriert//
+
+    if (currentElement === " " && nextElement === " ") {
+      // hier sind 2 Leerzeichen hintereinander, wir ignorieren das erste
     } else {
       result2.push(currentElement)
     }
   }
-
-  //Jetzt kann man die Leerzeichen zählen//
-
+  // jetzt können wir die Leerzeichen zählen
   let count = 0
   for (let i = 0; i < result2.length; i++) {
     const currentElement = result2[i]
@@ -289,31 +286,8 @@ export function aufgabe04(args) {
       count++
     }
   }
-  //Da es ein Wort mehr wie Leerzeichen gibt, geben wir Leerzeichen+1 zurück//
-
+  // da es ein wort mehr wie leerzeichen gibt, geben wie leerzeichen +1 zurück
   return count + 1
 }
+
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
-
-export function aufgabe17(args) {
-  const input = args
-  const totalList = []
-  const currentList = []
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-
-    //Wenn wir auf ein Leerzeichen treffen, dann schreiben wir alles was wir bis jetzt gemacht haben, in die totalList//
-
-    if (currentElement === " ") {
-      totalList.push(currentList.join(""))
-      currentList.length = 0
-    } else {
-      currentList.push(currentElement)
-    }
-  }
-  //Wir schreiben alles, was wir noch bis zum Ende gelesen haben, in die Liste//
-
-  totalList.push(currentList.join(""))
-  return totalList
-}
-linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
