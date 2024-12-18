@@ -389,3 +389,34 @@ export function aufgabe25(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe25]", aufgabe25)
+
+export function aufgabe26(args) {
+  const input = args
+  const result = []
+
+  //Bitte erstelle eine neue Variable, die dass erste Element speichert
+  const firstElement = input[0]
+
+  //Bitte erstelle eine neue Variable, die dass zweite Element speichert
+  const secondElement = input[1]
+
+  // Wenn der ASCII-Wert des ersten Elements grösser ist als des zweiten, dann vertausche die Elemente
+  if (firstElement.charCodeAt(0) > secondElement.charCodeAt(0)) {
+    // vertausche die Elemente
+    result.push(secondElement)
+    result.push(firstElement)
+  } else {
+    result.push(firstElement)
+    result.push(secondElement)
+  }
+
+  for (let i = 2; i < input.length; i++) {
+    const currentElement = input[i]
+
+    result.push(currentElement)
+  }
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe26]", aufgabe26)
