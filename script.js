@@ -313,3 +313,26 @@ export function aufgabe18(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe18]", aufgabe18)
+
+export function aufgabe23(args) {
+  const input = args
+  const result = []
+  // erstelle mir eine neue variable die das erste zeichen von input speichert
+  const firstElement = input[0]
+
+  // hänge das erste element an result an
+  result.push(firstElement)
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    // hange das current element an result an
+    result.push(currentElement)
+  }
+
+  // hänge das erste element nochmals ganz hinten an result an¨
+  result.push(firstElement)
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe23]", aufgabe23)
