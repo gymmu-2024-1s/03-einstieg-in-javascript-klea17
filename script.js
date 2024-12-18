@@ -164,23 +164,27 @@ export function aufgabe13(args) {
 linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
 
 export function aufgabe16(args) {
-  const text = args
-  let switchFirst = true
-  const listFirst = []
-  const listSecond = []
-  for (let i = 0; i < text.length; i++) {
-    if (text[i] === "$") {
-      switchFirst = false
+  const input = args
+  const result1 = []
+  const result2 = []
+  let dollarFound = false
+  //left dollar ist true
+  //right dollar ist false
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (dollarFound === false) {
+      result1.push(currentElement)
     } else {
-      if (switchFirst === true) {
-        listFirst.push(text[i])
-      } else {
-        listSecond.push(text[i])
-      }
+      result2.push(currentElement)
+    }
+    if (currentElement === "$") {
+      dollarFound = true
     }
   }
-  return [listFirst.join(""), listSecond.join("")]
+  return [result1.join(""), result2.join("")]
 }
+
 linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
 
 export function aufgabe20(args) {
