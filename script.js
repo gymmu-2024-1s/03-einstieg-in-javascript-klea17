@@ -479,3 +479,44 @@ linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
 // }
 // linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
 //
+export function aufgabe10(args) {
+  const input = args
+  const result = []
+
+  //Teste ob das erste Zeichen ein # ist
+  if (input[0] === "#") {
+    //return true
+  } else {
+    return false
+  }
+
+  // Teste ob input genau 7 Zeichen lang ist
+  if (input.length !== 7) {
+    //return true
+  } else {
+    return false
+  }
+
+  for (let i = 1; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
+
+    // Teste ob ascii zwischen 48 und 57 ist
+    if (ascii >= 48 && ascii <= 57) {
+      //return true
+    } else {
+      return false
+    }
+
+    // Teste ob ascii zwischen 65 und 70 ist
+    if (ascii >= 65 && ascii <= 70) {
+      //return true
+    } else {
+      return false
+    }
+  }
+
+  return true
+}
+
+linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
