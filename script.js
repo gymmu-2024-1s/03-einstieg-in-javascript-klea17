@@ -435,3 +435,25 @@ export function aufgabe11(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe11]", aufgabe11)
+
+export function aufgabe09(args) {
+  const input = args
+  const result = []
+
+  // Erstelle eine zählvariable
+  let count = 0
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    // Zähle count um eins hoch
+    count = count + 1
+  }
+  // Wenn count genau glaich 6 ist, dann gib wahr zurück
+  if (count === 6) {
+    return true
+  }
+  // Gib falsch zurück
+  return false
+}
+
+linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
