@@ -548,3 +548,24 @@ export function Bubblesort(args) {
 }
 
 linkupExerciseHandler("[data-click=Bubblesort]", Bubblesort)
+
+export function aufgabe15(args) {
+  const input = args
+  const result = []
+
+  let leerzeichenErkannt = false
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    if (currentElement === " ") {
+      leerzeichenErkannt = true
+    }
+
+    if (leerzeichenErkannt === false) {
+      result.push(currentElement)
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
