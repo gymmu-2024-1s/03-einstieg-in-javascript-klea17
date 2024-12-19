@@ -701,3 +701,21 @@ export function aufgabe19(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
+
+export function aufgabe14(args) {
+  const input = args
+  let count = 0 // Zähler für das Vorkommen von "e"
+
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] === "e") {
+      count++ // Erhöht den Zähler, wenn "e" gefunden wird
+      if (count === 3) {
+        return i // Gibt die Position des dritten "e" zurück
+      }
+    }
+  }
+
+  return -1 // Gibt -1 zurück, wenn weniger als 3 "e"s vorhanden sind
+}
+
+linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
