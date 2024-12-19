@@ -598,3 +598,33 @@ export function aufgabe27(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
+
+export function Insertionsort(args) {
+  const text = args
+  const list = text.split("") // Wandelt den Text in eine Liste um, um die Elemente zu sortieren.
+
+  // Geht durch das Array, beginnent mit dem zweiten Element.
+  for (let i = 1; i < list.length; i++) {
+    const currentElement = list[i]
+    let j = i - 1
+
+    // Verwendet eine "for"-Schleife, um das aktuelle Element mit den sortierten Elementen zu vergleichen
+    for (
+      ;
+      j >= 0 && list[j].charCodeAt(0) > currentElement.charCodeAt(0);
+      j--
+    ) {
+      // Verschiebt das größere Element nach rechts
+      list[j + 1] = list[j]
+    }
+
+    // Setzt das aktuelle Element an die richtige Stelle
+    list[j + 1] = currentElement
+  }
+
+  // Fügt die sortierte Liste wieder zu einem String zusammen und gebt diese zurück
+  const result = list.join("")
+  return result
+}
+
+linkupExerciseHandler("[data-click=Insertionsort]", Insertionsort)
