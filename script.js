@@ -552,16 +552,18 @@ linkupExerciseHandler("[data-click=Bubblesort]", Bubblesort)
 export function aufgabe15(args) {
   const input = args
   const result = []
-
+  //Erstellt eine Variable, um zu erkennen, ob ein Leerzeichen (" ") im String gefunden wurde.
   let leerzeichenErkannt = false
 
   for (let i = 0; i < input.length; i++) {
+    // Speichert das aktuelle Zeichen in "currentElement".
     const currentElement = input[i]
 
     if (currentElement === " ") {
+      // Wenn ein Leerzeichen gefunden wurde, setzt es die Variable "leerzeichenErkannt" auf "true".
       leerzeichenErkannt = true
     }
-
+    // Fügt das Zeichen zu "result" hinzu, wenn bis dann kein Leerzeichen erkannt wurde.
     if (leerzeichenErkannt === false) {
       result.push(currentElement)
     }
@@ -573,22 +575,25 @@ linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
 export function aufgabe27(args) {
   const input = args
   const result = []
-
+  // Überprüft, ob die Eingabe leer ist. Wenn ja, gibt die Funktion "false" zurück.
   if (input.length === 0) {
     return false
   }
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
+    // Holt den ASCII-Wert des Zeichens
     const ascii = currentElement.charCodeAt(0)
 
     if (48 <= ascii && ascii <= 57) {
-      // IST OKAY, MACHE WEITER
+      // Testet ob das Zeichen zwischen 48 und 57 ist
+      // Wenn das Zeichen eine Zahl ist, wird die Schleife fortgesetzt.
     } else {
+      // Wenn ein nicht-Zahl Zeichen gefunden wird, gibt die Funktion "false" zurück.
       return false
     }
   }
-
+  // Wenn die Schleife komplett durchgegangen wurde, gibt die Funktion "true" zurück
   return true
 }
 
