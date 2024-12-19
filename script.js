@@ -662,3 +662,26 @@ export function Selectionsort(args) {
 }
 
 linkupExerciseHandler("[data-click=Selectionsort]", Selectionsort)
+
+export function aufgabe17(args) {
+  const input = args
+  const totalList = []
+  const currentList = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    //Wenn wir auf ein Leerzeichen treffen, dann schreiben wir alles war wir bis// jetzt haben, in die totalList
+    if (currentElement === " ") {
+      totalList.push(currentList.join())
+      currentList.lenght = 0
+    } else {
+      currentList.push(currentElement)
+    }
+  }
+  //Wir schreiben alles was wir noch bis zum Ende gelesen haben, in die Liste
+  totalList.push(currentList.join())
+
+  return totalList
+}
+
+linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
