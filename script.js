@@ -495,37 +495,34 @@ linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
 //
 export function aufgabe10(args) {
   const input = args
-  const result = []
-
-  //Testet , ob das erste Zeichen ein # ist
-  if (input[0] === "#") {
+  // Überprüft, ob das erste Zeichen ein `#` ist
+  if (input[0] !== "#") {
     return false // Gibt `false` zurück, wenn das erste Zeichen kein `#` ist
   }
 
-  // Testet,  ob die Eingabe genau 7 Zeichen lang ist.
+  // Überprüft, ob die Eingabe genau 7 Zeichen lang ist
   if (input.length !== 7) {
-    // Gibt `false` zuruck, wenn die Eingabe nicht genau 7 Zeichen lang ist
     return false
   }
 
+  // Überprüft, ob die restlichen 6 Zeichen gültige Hexadezimalzeichen sind (0-9, A-F, a-f)
   for (let i = 1; i < input.length; i++) {
-    const currentElement = input[i] // Holt das aktuelle Zeichen
-    const ascii = currentElement.charCodeAt(0) // Holt den ASCII-Wert des Zeichens
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
 
-    // Testet ob das Zeichen zwischen 48 und 57 ist
-    if (ascii >= 48 && ascii <= 57) {
-    } else {
-      return false
-    }
-
-    // Testet ob ascii zwischen 65 und 70 ist
-    if (ascii >= 65 && ascii <= 70) {
-    } else {
-      return false
+    // Testet, ob das Zeichen ein gültiges Hexadezimalzeichen ist
+    if (
+      !(
+        (ascii >= 48 && ascii <= 57) || // 0-9
+        (ascii >= 65 && ascii <= 70) || // A-F
+        (ascii >= 97 && ascii <= 102)
+      ) // a-f
+    ) {
+      return false // Gibt `false` zurück, wenn ein ungültiges Zeichen gefunden wird
     }
   }
 
-  return true
+  return true // Gibt `true` zurück, wenn alle Bedingungen erfüllt sind
 }
 
 linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
