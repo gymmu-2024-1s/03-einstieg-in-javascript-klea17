@@ -171,23 +171,24 @@ linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
 
 export function aufgabe16(args) {
   const input = args
-  const result1 = [] // Speichert die Zeichen links vom ersten "$".
-  const result2 = [] // Speichert auch, aber die Zeichen rechts von dem
-  let dollarFound = false // Das anzeigt, ob das Zeichen "$" gefunden wurde.
+  const totalList = []
+  const currentList = []
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    if (dollarFound === false) {
-      result1.push(currentElement) // alle Zeichen vor "$" werden in `result1` gespeichert.
-    } else {
-      result2.push(currentElement)
-    }
-    // Wenn das aktuelle Zeichen ein "$" ist, wird das Wort `dollarFound` auf `true`gesetzt
+    // Wenn wir auf das Zeichen '$' treffen, dann speichern wir alles, was wir bis jetzt haben, in die totalList
     if (currentElement === "$") {
-      dollarFound = true
+      totalList.push(currentList.join("")) // Fügt den ersten Teil (vor dem '$') in die Liste ein
+      currentList.length = 0 // Leert die currentList für den zweiten Teil
+    } else {
+      currentList.push(currentElement) // Fügt das aktuelle Zeichen zur currentList hinzu
     }
   }
-  return [result1.join(""), result2.join("")]
+
+  // Wir speichern alles, was nach dem '$' kommt, in die Liste
+  totalList.push(currentList.join(""))
+
+  return totalList
 }
 
 linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
