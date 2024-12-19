@@ -628,3 +628,37 @@ export function Insertionsort(args) {
 }
 
 linkupExerciseHandler("[data-click=Insertionsort]", Insertionsort)
+
+export function Selectionsort(args) {
+  const text = args
+  // Wandelt den Text in ein Array um, um mit den einzelnen Elementen arbeiten zu können.
+  const list = text.split("")
+
+  for (let i = 0; i < list.length - 1; i++) {
+    // Setzt den Index des kleinsten Elements auf den aktuellen Index (i).
+    let minIndex = i
+
+    // Durchläuft den restlichen Teil des Arrays und sucht das kleinste Element.
+    for (let j = i + 1; j < list.length; j++) {
+      // Vergleicht das aktuelle Element mit dem bis jetzt kleinsten Element
+      // Wenn das aktuelle Element kleiner ist, aktualisiert es minIndex.
+      if (list[j].charCodeAt(0) < list[minIndex].charCodeAt(0)) {
+        minIndex = j // Setzt den Index des kleineren Elements
+      }
+    }
+
+    // Wenn minIndex nicht gleich i ist, bedeutet das, dass das kleinste Element nicht bereits an der Position i ist.
+    // In diesem Fall tauschen wir das Element an Position i mit dem Element an Position minIndex.
+    if (minIndex !== i) {
+      const temp = list[i] // Speichert das Element an der aktuellen Position i.
+      list[i] = list[minIndex] // Setzt das kleinste Element an die Position i.
+      list[minIndex] = temp // Setzt das frühere kleinste Element an die Position minIndex.
+    }
+  }
+
+  // Wandelt das Array nach der Sortierung wieder in einen String um und gibt diesen zurück.
+  const result = list.join("")
+  return result
+}
+
+linkupExerciseHandler("[data-click=Selectionsort]", Selectionsort)
