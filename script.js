@@ -685,3 +685,19 @@ export function aufgabe17(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
+export function aufgabe19(args) {
+  const input = args
+  const result = [] // Leeres Array für das Ergebnis
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i] // Aktuelles Zeichen
+
+    // Verdoppelt das aktuelle Zeichen und fügt es zum Ergebnis-Array hinzu
+    result.push(currentElement, currentElement)
+  }
+
+  // Gibt das Ergebnis als zusammengefügten String zurück
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
