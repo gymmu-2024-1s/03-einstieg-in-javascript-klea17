@@ -720,3 +720,19 @@ export function aufgabe14(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
+
+export function aufgabe28(args) {
+  const input = args.split(" ") // Teilt die Eingabe am Leerzeichen
+
+  // Prüft, ob es genau 2 Teile gibt
+  if (input.length === 2) {
+    // Wenn beide Teile Zahlen sind, wird die Summe berechnet und zurückgegeben
+    if (+input[0] == input[0] && +input[1] == input[1]) {
+      return +input[0] + +input[1] // Gibt die Summe der beiden Zahlen zurück
+    }
+  }
+
+  return "Fehler: Geben Sie zwei Zahlen durch ein Leerzeichen getrennt ein." // Fehlermeldung
+}
+
+linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
